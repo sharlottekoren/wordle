@@ -143,17 +143,21 @@ function update() {
     for (let c = 0; c < width; c++) {
         let currentTile = document.getElementById(row.toString() + "-" + c.toString());
         let letter = currentTile.innerText;
+        let keyTile = document.getElementById("Key" + letter);
 
         // Is it in the correct position?
         if (word[c] === letter) {
             currentTile.classList.add("correct");
 
-            let keyTile = document.getElementById("Key" + letter);
             keyTile.classList.remove("present");
+            keyTile.classList.remove("absent");
             keyTile.classList.add("correct");
 
             correct += 1;
             letterCount[letter] -= 1;
+        } // Not in the correct position
+        else {
+            keyTile.classList.add("absent");
         }
 
         if (correct === width) {
@@ -166,13 +170,13 @@ function update() {
         let currentTile = document.getElementById(row.toString() + "-" + c.toString());
         let letter = currentTile.innerText;
 
-
         if (!currentTile.classList.contains("correct")) {
             // Is it in the word?
             if (word.includes(letter) && letterCount[letter] > 0) {
                 currentTile.classList.add("present");
                 let keyTile = document.getElementById("Key" + letter);
                 if (!keyTile.classList.contains("correct")) {
+                    keyTile.classList.remove("absent");
                     keyTile.classList.add("present");
                 }
                 letterCount[letter] -= 1;
