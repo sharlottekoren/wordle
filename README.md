@@ -4,7 +4,7 @@ A browser-based clone of Wordle, built with HTML, CSS, and JavaScript.
 
 ## How to play
 
-Open [wordle.html](wordle.html) in a browser and start typing.
+Open [wordle.html](https://sharlottekoren.github.io/wordle/wordle.html) in a browser and start typing.
 
 - Guess the hidden 5-letter word in 6 tries.
 - Type letters using your keyboard or by clicking the on-screen keyboard, then press **Enter** to submit a guess.
